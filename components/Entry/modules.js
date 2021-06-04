@@ -13,7 +13,7 @@ export const registerUser = async (data) =>{
                 emailVerified:user.emailVerified,
                 userType:data.userType
             }
-            db.ref('/users/' + user.uid).set(dbuser).then(res=>console.log("success")).catch(e=>console.log(e));
+            db.ref('/users/' + user.uid).set(dbuser);
         })
         .catch(e=>{
             console.log(e.code, e.message);
@@ -28,10 +28,8 @@ export const sendVerificationEmail = async (user) =>{
     let success = false;
     try {
     await user.sendEmailVerification().then(function() {
-        console.log("success in sending verification");
         success = true;
         }).catch(function(error) {
-        console.log("Error verifying: ", error);
         success = false;
         });
     } catch (error) {

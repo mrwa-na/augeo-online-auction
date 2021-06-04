@@ -20,7 +20,6 @@ const Register = ({action}) => {
     const handleRegister = async(data) => {
         setLoading(true);
         let user = await registerUser(data);
-        console.log(user);
         if(user){
             let sent = await sendVerificationEmail(user);
             if(!sent){
@@ -115,7 +114,7 @@ const Register = ({action}) => {
 
 
                 <br/>
-
+{/* 
                 <h4>What describes you?</h4>
                 <div className="flex-spaced">
                     <div>
@@ -127,7 +126,7 @@ const Register = ({action}) => {
                         <label htmlFor="seller">Seller</label>
                     </div>                
                     {errors.userType?<div className="err">This field is required</div>:null}
-                </div>
+                </div> */}
 
                 <br/>
                 <br/>

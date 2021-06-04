@@ -1,0 +1,26 @@
+.side_nav{
+    width: 60px;
+    transition: all .2s ease-in-out;
+    height: calc(100vh - 50px);
+    background-color: #394B59;
+    overflow: hidden;
+    position: fixed;
+    top:50px;
+    box-shadow: 2px 0 16px 0px #00000060;
+    left:0;
+    z-index: 99;
+}
+
+.item{
+    display: grid;
+    place-items:center;
+    text-align: center;
+    margin: 28px 0;
+    cursor: pointer;
+}
+
+.item .title{
+    color:#fff;
+    margin: 9px 0 8px 0;
+    font-size: 11px;
+}

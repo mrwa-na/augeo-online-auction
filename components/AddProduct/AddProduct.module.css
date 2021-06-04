@@ -1,0 +1,44 @@
+.main{
+    padding: 9px 0 18px 0;
+    width: 400px;
+    margin:auto;
+}
+
+.section{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+.field{
+    position: relative;
+    margin: 6px 8px;
+    width: 100%;
+}
+
+.bid_or_price{
+    width: fit-content;
+}
+
+.field:first-child{
+    margin-left: 0;
+}
+
+.product_upload_progress{
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background-color: #ffffffdd;
+    backdrop-filter: blur(8px);
+    z-index: 9999;
+}
+
+.product_upload_progress .inner{
+    width: 400px;
+    display: grid;
+    place-items: center;
+}

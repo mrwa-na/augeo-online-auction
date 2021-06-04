@@ -1,0 +1,450 @@
+/*
+    ________________________________________________________________________________________________    
+
+    !! ============================== Buyable Product Styling STARTS ============================ !!
+    ________________________________________________________________________________________________
+
+*/
+
+
+.buyable_container{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    /* justify-content: space-between; */
+    width: 100%;
+    margin: 60px 8px 0 0;
+    padding: 0 6px 0 25px;
+}
+
+.buyable_container > *{
+    max-height: calc(100vh - 68px);
+    padding: 8px;
+    overflow: auto;
+    box-shadow: inset 0 0 4px 1px #00000060;
+    background-color: #f1f2f3;
+    margin: 0 3px;
+}
+
+.buyable_container >*:first-child{
+    flex-basis: 63%;
+}
+.buyable_container >*:last-child{
+    flex-basis: 34%;
+}
+
+.buyable_container *::-webkit-scrollbar{
+    width: 1em;
+}
+
+.buyable_container *::-webkit-scrollbar-thumb{
+    border: 4px solid rgba(0, 0, 0, 0);
+    background-clip: padding-box;
+    border-radius: 25px;
+}
+
+.buyable_container *::-webkit-scrollbar-track{
+    background-color: #eee;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 25px;    
+}
+
+/*
+    ________________________________________________________________________________________________    
+
+    !! ============================== Buyable Product Styling ENDS ============================== !!
+    ________________________________________________________________________________________________
+
+*/
+
+/*  ---------------------------------------------------------------------------------------------- */
+
+/*
+    ________________________________________________________________________________________________    
+
+    !! ============================== Biddable Product Styling STARTS ============================ !!
+    ________________________________________________________________________________________________
+
+*/
+.buy_btn_trigger{
+    background-color: orange !important;
+    cursor: pointer;
+}
+.buy_btn_trigger:hover{
+    background-color: darkorange !important;
+}
+
+.modal_container{
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    z-index: 99999;
+    top:0;
+    left:0;
+}
+
+.deadline_counter{
+    position: fixed;
+    top:50px;
+    width: 320px;
+    height: 28px;
+    z-index: 9;
+    left:50%;
+    transform: translateX(-50%);
+    background-color: crimson;
+    color:#fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 2px 8px 0 #00000080;
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+}
+
+/* 
+    =============== MAIN CONTAINER FOR BIDDABLE PRODUCT ===============
+*/
+.biddable_container{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    /* max-height: calc(100vh - 80px); */
+    overflow: hidden;
+    /* padding-top: 60px; */
+    justify-content: space-between;
+    /* align-items: center; */
+    width: 100%;
+    margin: 60px 8px 0 0;
+    padding: 0 6px 0 25px;
+}
+
+.biddable_container > *:not(.side_menu_container, .deadline_counter){
+    max-height: calc(100vh - 68px);
+    padding: 8px;
+    overflow: auto;
+    box-shadow: inset 0 0 4px 1px #00000060;
+    background-color: #f1f2f3;
+    margin: 0 3px;
+}
+
+.biddable_container *::-webkit-scrollbar{
+    width: 1em;
+}
+
+.biddable_container *::-webkit-scrollbar-thumb{
+    border: 4px solid rgba(0, 0, 0, 0);
+    background-clip: padding-box;
+    border-radius: 25px;
+}
+
+.biddable_container *::-webkit-scrollbar-track{
+    background-color: #eee;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 25px;    
+}
+
+/* 
+    =============== LEFT SECTION OF BIDDABLE (STATUS, INPUT, STATS) ===============
+*/
+
+.section_title, .current_status{
+    margin:0 0 16px 0;
+    text-align: center;
+    background-color: #394B59 !important;
+    color:#fff;
+}
+
+.current_status{
+    background-color: orange !important;
+}
+
+.bid_input_container{
+    width: 29.5%;
+    max-height: calc(100vh - 65px);
+}
+
+
+.bid_input_button{
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap:6px;
+}
+
+.popup{
+    position: absolute;
+    left:108%;
+    top:50%;
+    min-width: 160px;
+    transform: translateY(-50%);
+    border-radius: 2px;
+    background-color: #333;
+    color:#fff;
+    padding:4px;
+}
+
+.popup:after{
+    position: absolute;
+    content:"";
+    right: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    border-right: 8px solid #333;
+    border-left: 8px solid transparent;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+}
+
+.stats{
+    margin-top: 16px;
+}
+.stats ul{
+    list-style: none;
+    padding: 0;
+}
+
+
+/* 
+    =============== PRODUCT INFO AND CONTENT ===============
+*/
+
+.product_content_container{
+    width: 39%;
+}
+
+
+.product_content_container img{
+    width: 100%;
+    height: 60%;
+    object-fit: contain;
+}
+
+
+.product_content_container .text *{
+    width: 100%;
+    text-align: center;
+    padding: 18px;
+}
+
+/* 
+    =============== WATCHERS AND BIDDERS LIST ===============
+*/
+
+.getBtn{
+    font-size: 19px;
+    width: 160px !important;
+    height: fit-content;
+    background-color: orange !important;
+    color:#fff;
+    border:none !important;
+    box-shadow: none !important;
+    background-image: none !important;
+    margin: 0 4px !important;
+}
+
+.getBtn:hover{
+    background-color: darkorange !important;
+}
+
+.people_list_container{
+    width: 29%;
+    overflow: hidden !important;
+}
+
+.people_list{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 49%;
+    overflow: auto;
+    border-radius: 4px;
+    padding: 6px;
+    background-color: #fff;
+    border:2px solid #ccc;
+    box-shadow: 0 0 4px 1px #00000030;
+}
+
+.people_list:first-child{
+    margin: 0 0 8px 0;
+}
+
+.people_list .section_title{
+    /* height: fit-content !important; */
+    margin:0 0 4px 0;
+    padding: 6px 0;
+}
+
+.people_list *{
+    width: 100%;
+}
+
+.people_list > div:first-child{
+    background-color: #f3f3f3;
+    text-align: center;
+}
+
+.rating{
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    width: 100%;
+    padding: 8px;
+}
+
+.rating > *, .disabled_rating_stars > *{
+    width: 25px;
+    transform: scale(1.5);
+    margin: 0 auto;
+}
+.rating:focus-within{
+    outline: none;
+}
+
+.disabled_rating{
+    position: relative;
+    display: flex !important;
+    flex-wrap: wrap;
+    /* z-index: -4; */
+}
+.disabled_rating > *{
+    flex-basis: 50%;
+}
+
+.disabled_rating:after{
+    position: absolute;
+    content:"";
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    top:0;
+    left:0;
+    z-index: 1;
+}
+
+.disabled_rating{
+    display: flex;
+    justify-content: center;
+}
+
+.disabled_rating_stars{
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    width: 100%;
+    padding: 0 8px 0 8px;
+}
+
+
+/*
+    ________________________________________________________________________________________________    
+
+    !! ================================ LOADER PROGRESS SECTION ================================= !!
+    ________________________________________________________________________________________________
+
+*/
+
+.product_upload_progress{
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background-color: #ffffffdd;
+    backdrop-filter: blur(8px);
+    z-index: 9999;
+}
+
+.product_upload_progress .inner{
+    width: 400px;
+    display: grid;
+    place-items: center;
+}
+
+
+/*
+    ________________________________________________________________________________________________    
+
+    !! ================================== MOBILE STYLES SECTION ================================= !!
+    ________________________________________________________________________________________________
+
+*/
+
+@media (max-width:620px){
+    .deadline_counter{
+        width: 260px;
+        left:calc(50% + 22px);
+    }
+    .biddable_container, .buyable_container{
+        display: block;
+        margin-top: 50px;
+        margin-left: 0;
+        margin-right: 4px !important;
+        width: auto;
+        overflow: auto;
+        max-height: unset;
+        padding: 3px;
+    }
+    .buyable_container >*:first-child{
+        overflow: unset;
+        height: unset;
+        max-height: unset;
+    }
+    .bid_input_container{
+        position: unset;
+        max-height: unset;
+    }
+    .side_menu_container{
+        width: 40px;
+        padding: 9px 0 80px 0;
+    }
+
+    .stats{
+        padding:8px;
+    }
+    .stats li{
+        padding: 4px !important;
+    }
+
+    .biddable_container > *:not(.side_menu_container, .deadline_counter), .buyable_container > *{
+        max-height: unset;
+        width: 100%;
+        height: auto;
+        overflow: unset;
+    }
+
+    .bid_input_container, .people_list_container, .product_content_container{
+        width: 100%;
+        margin: 8px 0;
+        box-shadow: inset 0 0 4px 1px #00000060;
+        padding:6px;
+        border-radius: 4px;
+        background-color: #f1f1f1;
+    }
+
+    .bid_input_container > *, .people_list{
+        margin:4px 0 !important;
+    }
+
+    .getBtn{
+        font-size: 14px;
+    }
+
+    .disabled_rating{
+        padding:4px;
+    }
+    .disabled_rating > *{
+        flex-basis: 100%;
+    }
+
+    .not_available > *{
+        margin: 0 auto;
+        width: 320px;
+    }
+    .not_available h4{
+        text-align: center;
+    }
+}

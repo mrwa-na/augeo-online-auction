@@ -1,11 +1,12 @@
 import s from "./product.module.css"
+import {Alert} from '@blueprintjs/core'
 import { useEffect, useRef, useState } from "react";
 import { db } from "../../firebase/init";
 import Rating from 'react-simple-star-rating'
-import { AppToaster } from "./Toaster";
 
 const ReviewsList = ({user, product, openModal}) => {
     const [rating, setRating] = useState(0);
+    const [openAlert, setOpenAlert] = useState(false);
     // Catch Rating value
     const handleRating = (rate) => {
       setRating(rate)
@@ -18,7 +19,7 @@ const ReviewsList = ({user, product, openModal}) => {
     }
 
     const addToCart = () =>{
-        AppToaster.show({ message: "Added to cart", intent:'success', icon:'small-tick' });
+        setOpenAlert(true);
         db.ref(`users/${user.uid}/cart/${product.id}`).set({
             productId:product.id,
             productName:product.name,
@@ -31,6 +32,10 @@ const ReviewsList = ({user, product, openModal}) => {
     }
 
      return (
+        <>
+        <Alert className={s.alertAdded} isOpen={openAlert} onClose={()=>setOpenAlert(false)}>
+            Successfully Added To Cart
+        </Alert>
       <div className={s.people_list_container}>
           <div className={s.people_list} style={{height:'19%'}}>
               <h2 style={{textAlign:'center'}}>Get This Product Now For ${product.price}</h2>
@@ -81,6 +86,7 @@ const ReviewsList = ({user, product, openModal}) => {
                 <button className="bp3-button bp3-intent-warning" style={{width:180, backgroundColor:'orange', margin:'0 auto'}} onClick={sendReview}>Submit</button>
             </div>
        </div>
+       </>
      )
 }
 

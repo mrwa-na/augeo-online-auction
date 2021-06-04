@@ -374,6 +374,10 @@
 */
 
 @media (max-width:620px){
+    .alertAdded{
+        margin-left:80px;
+        margin-right: 16px;
+    }
     .deadline_counter{
         width: 260px;
         left:calc(50% + 22px);

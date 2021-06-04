@@ -6,3 +6,11 @@ export const AppToaster = Toaster.create({
     position: Position.TOP,
     usePortal:true
 });
+
+export const Toast = (typeof window !== 'undefined')
+   ? Toaster.create({
+    className: "toaster",
+    position: Position.TOP,
+    usePortal:true
+   })
+  : null

@@ -21,7 +21,7 @@ const Purchases = ({purchases, bids}) => {
             {
                 purchases.map(purchase=>{
                     if(purchase.orders)
-                        return purchase.orders.map(order=>{
+                        return Object.values(purchase.orders).map(order=>{
                             return <div className={s.purchase}>
                                         <h4>Your product: <b>{purchase.name}</b> has been ordered by customer <b>{order.customerEmail}</b> on <b>{order.date}</b></h4>
                                     </div>

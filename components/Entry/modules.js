@@ -10,8 +10,7 @@ export const registerUser = async (data) =>{
             let dbuser = {
                 email:user.email,
                 uid:user.uid,
-                emailVerified:user.emailVerified,
-                userType:data.userType
+                emailVerified:user.emailVerified
             }
             db.ref('/users/' + user.uid).set(dbuser);
         })

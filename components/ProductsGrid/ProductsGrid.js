@@ -37,7 +37,6 @@ const ProductsGrid = () => {
                                 p.type==="forBidding"?
                                 <>
                                     <Link href={`/products/${p.id}`}><a><button className="bp3-button">Bid</button></a></Link>
-                                    <button className="bp3-button">Watch</button>
                                 </>
                                 :
                                     <Link href={`/products/${p.id}`}><a><button className="bp3-button">Buy</button></a></Link>

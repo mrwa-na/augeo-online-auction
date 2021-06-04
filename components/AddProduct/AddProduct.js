@@ -17,7 +17,8 @@ const AddProduct = ({user}) => {
     const { register, handleSubmit, watch, unregister, formState: { errors }} = useForm({mode:'all'});
 
     const handleProduct = async (data) =>{
-        data = {
+        if(data.type==="forBidding"){
+            data = {
                 ...data, 
                 id:`${data.name}___${uniqid.time()}`, 
                 ownerId: user.uid, 
@@ -26,16 +27,26 @@ const AddProduct = ({user}) => {
                 totalStartTime: getTotalTime(data.startDate, data.startTime),
                 totalEndTime: getTotalTime(data.endDate, data.endTime),
             };
-        let err = validator(data.startDate, data.endDate, data.startTime, data.endTime, data.demo);
+            let err = validator(data.startDate, data.endDate, data.startTime, data.endTime, data.demo);
 
-        
-        if(err){
-            setAlert({show:true, msg:err});
-            setTimeout(()=>{
-                setAlert({show:false, msg:""});
-            }, 6000)
-            return;
+            
+            if(err){
+                setAlert({show:true, msg:err});
+                setTimeout(()=>{
+                    setAlert({show:false, msg:""});
+                }, 6000)
+                return;
+            }
+        }else{
+            data = {
+                ...data,
+                id:`${data.name}___${uniqid.time()}`, 
+                ownerId: user.uid, 
+                ownerEmail: user.email, 
+                image: data.image[0]
+            }
         }
+
 
         setLoading(true);
         try {
